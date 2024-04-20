@@ -1,0 +1,57 @@
+{
+    "stock_symbol": "ASML",
+    "site_to_get_eps_growth":[
+        { 
+            "url": "https://www.zacks.com/stock/quote/STOCK_SYMBOL",
+            "scrap_pattern": "dl.abut_bottom dd p.up.float_right::text"
+        }, 
+        { 
+            "url": "https://www.finviz.com/quote.ashx?t=STOCK_SYMBOL&p=d",
+            "scrap_pattern": "//td[text()=\"EPS next 5Y\"]/following-sibling::td/b/text()"
+        },
+        {
+            "url": "https://www.stockanalysis.com/stocks/STOCK_SYMBOL/statistics/",
+            "scrap_pattern": "//span[text()=\"EPS Growth Forecast (5Y) \"]/parent::td/following-sibling::td/text()"
+        },
+        {
+            "url": "https://finance.yahoo.com/quote/STOCK_SYMBOL/analysis?p=STOCK_SYMBOL",
+            "scrap_pattern": "//span[text()='Next 5 Years (per annum)']/following::td/text()"
+        }
+    ],
+    "operating_cash_flow": {
+        "url": "https://finance.yahoo.com/quote/STOCK_SYMBOL/cash-flow?p=STOCK_SYMBOL",
+        "scrap_pattern": "//span[text()='Operating Cash Flow']/following::span[1]/text()"
+    },
+    "net_income": {
+        "url": "https://finance.yahoo.com/quote/STOCK_SYMBOL/financials?p=STOCK_SYMBOL",
+        "scrap_pattern": "//span[text()='Net Income Common Stockholders']/following::span[1]/text()"
+    },
+    "cash_flow_from_continuing_operating_activities": {
+        "url": "https://finance.yahoo.com/quote/STOCK_SYMBOL/cash-flow?p=STOCK_SYMBOL",
+        "scrap_pattern": "//span[text()='Cash Flow from Continuing Operating Activities']/following::span[1]/text()"
+    },
+    "total_debt": {
+        "url": "https://www.wsj.com/market-data/quotes/AZO/financials/quarter/balance-sheet",
+        "scrap_pattern": ""
+    },
+    "cash_and_short_term_investment": {
+        "url": "",
+        "scrap_pattern": ""
+    },
+    "outstanding_share": {
+        "url": "https://finviz.com/quote.ashx?t=STOCK_SYMBOL&p=d",
+        "scrap_pattern": "//td[text()=\"Shs Outstand\"]/following-sibling::td/b/text()"
+    },
+    "beta": {
+        "url": "https://finviz.com/quote.ashx?t=STOCK_SYMBOL&p=d",
+        "scrap_pattern": "//td[text()=\"Beta\"]/following-sibling::td/b/text()"
+    },
+    "current_price": {
+        "url": "https://finviz.com/quote.ashx?t=STOCK_SYMBOL&p=d",
+        "scrap_pattern": "//td[text()=\"Price\"]/following-sibling::td/b/text()"
+    },
+    "free_cash_flow": {
+        "url": "https://finance.yahoo.com/quote/STOCK_SYMBOL/cash-flow",
+        "scrap_pattern": "//span[text()='Free Cash Flow']/following::span[1]/text()"
+    }
+}
